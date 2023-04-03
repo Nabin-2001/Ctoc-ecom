@@ -1,0 +1,9 @@
+
+img{
+    width: 400px;
+}
+.slick-next{
+    right:10px;
+    display: none;
+    visibility: hidden;
+}

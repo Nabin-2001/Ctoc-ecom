@@ -1,0 +1,27 @@
+.nav-item a,
+.navbar-brand {
+    color: white;
+    font-size: 21px;
+}
+.navbar li,
+input {
+    list-style: none;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+
+ul .dropdown-item {
+    color: black;
+}
+.nav-item .nav-link{
+    font-weight: lighter;
+    color: white;
+}

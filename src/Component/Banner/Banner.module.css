@@ -1,0 +1,10 @@
+
+.bg{
+    width: 500px;
+    background-color: orange;
+}
+.slick-next{
+    right:10px;
+    color: red;
+    font-size: 3000px;
+}

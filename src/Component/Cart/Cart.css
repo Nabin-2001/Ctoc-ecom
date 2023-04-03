@@ -1,0 +1,10 @@
+#C_selling_price{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.card{
+    border-radius: 22px;
+background: linear-gradient(145deg, #fdfbfb, #fafafa);
+box-shadow:  9px 9px 18px #a1a1a1,
+             -9px -9px 18px #ffffff;
+}

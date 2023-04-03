@@ -1,0 +1,15 @@
+
+#Align_group img{
+    padding: 30px;
+    justify-content: space-around;
+    width: 300px;
+    cursor: pointer;
+    width: 253px;
+    height: 193px;
+  
+}
+#categry_Group{
+    border-radius: 8px;
+    box-shadow:  5px 5px 5px #bdbdbd,
+                 -5px -5px 5px #ffffff;
+}
