@@ -1,0 +1,25 @@
+.Signup {
+    max-width: 400px;
+    min-height: 350px;
+    margin: 0 auto;
+    background-color:rgb(189 175 175 / 21%);
+   margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+    .Signup {
+        max-width: 100%;
+    }
+}
+/* 
+#radio_button input,
+span {
+    margin-right: 10px;
+} */
+
+.form_button button {
+    width: 100%;
+}
+.Signup div{
+    margin-bottom: 15px;
+}

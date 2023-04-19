@@ -1,27 +1,56 @@
-.nav-item a,
-.navbar-brand {
-    color: white;
-    font-size: 21px;
-}
-.navbar li,
-input {
-    list-style: none;
+* {
+    margin: 0px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
-.navbar {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
+.Container {
+    width: 100%;
 }
 
-ul .dropdown-item {
-    color: black;
-}
-.nav-item .nav-link{
-    font-weight: lighter;
+.nav_bar {
+    background-color: #FF6262;
+    width: 100%;
     color: white;
+    padding: 5px;
+
 }
+
+.navbar-search {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.search-input {
+    padding: 0.6rem;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    width: 95%;
+}
+
+.btn-group {
+    width: 100%;
+}
+
+.search-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    border-radius: 20px;
+}
+
+/* code for slider */
+.tag {
+    text-align: center;
+}
+
+.slick-slide img {
+    margin: auto;
+    width: 50%;
+    height: 50%;
+}
+
+/* code for slider end */
+

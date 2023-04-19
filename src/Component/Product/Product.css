@@ -1,12 +1,19 @@
 #card img {
-    width: 13rem;
-    height: 15rem;
-    padding: 9px;
+    width: 12rem;
+    height: 13rem;
+    
 }
 
 #card {
     align-items: center;
     cursor: pointer;
+     border: 3px solid #2e272708 ;
+    z-index: 999;
+   overflow: hidden;
+   
+   width: 150px;
+   height:150px;
+   
 }
 
 #actual_price {
@@ -14,7 +21,6 @@
     font-weight: 700;
     text-decoration: line-through;
     color: rgba(32, 31, 31, 0.356);
-
 }
 
 #selling_price {
@@ -22,12 +28,15 @@
     font-size: 1.4rem;
     font-weight: bolder;
 }
+
 Link {
     color: black;
 }
+
 *{
     text-decoration: none;
 }
+
 #title{
     text-decoration: none;
 }

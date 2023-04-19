@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.formgroup{
+    /* width: 700px;
+    background-color:white;
+    padding: 3rem;
+    display: grid; */
+    margin-bottom: 30px;
+}
+label{
+    width: 600px;
+    padding: 15px;
+
+}
+label input , textarea{
+    width: 400px;
+    border: 1px solid black;
+}
+#form4Example1,#form4Example3{
+    border: 2px solid rgb(43, 41, 41);
+}

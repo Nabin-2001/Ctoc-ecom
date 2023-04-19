@@ -2,9 +2,17 @@
     font-size: 20px;
     font-weight: bolder;
 }
-.card{
+/* .card{
     border-radius: 22px;
 background: linear-gradient(145deg, #fdfbfb, #fafafa);
 box-shadow:  9px 9px 18px #a1a1a1,
              -9px -9px 18px #ffffff;
+} */
+
+#cart_image{
+    width: 60px;
+}
+#cart_space{
+    margin-bottom: 50rem;
+    margin-top: 50px;
 }

@@ -1,49 +1,73 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Navbar.css'
-import { RiShoppingCart2Fill } from 'react-icons/ri';
 import { Usercontext } from '../../App';
 import { useNavigate } from 'react-router-dom';
-const Navbar = () => {
-  const navigate = useNavigate()
-  const{cart,setcart}=useContext(Usercontext)
-  return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div className="container ">
-      <a className="navbar-brand" href="#">Logo</a>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav me-auto mb-2 text-center mb-lg-0">
-          <li className="nav-item">
-            <a className="nav-link " aria-current="page" href="#">Home</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" >Product</a>
-          </li>
-          <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a  className="dropdown-item" href="#">Action</a></li>
-              <li><a className="dropdown-item" href="#">Another action</a></li>
-              <li><hr className="dropdown-divider" /></li>
-              <li><a className="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-       
-        </ul>
-        <form className="d-flex">
-        <input className="form-control me-2 w-100" type="search" placeholder="Search" aria-label="Search" />
-        <button className="btn btn-outline-success" type="submit">Login</button>
-       
-        </form>
-        <span className='ms-3' onClick={()=>navigate('/Cartitem')}><RiShoppingCart2Fill style={{color:"white", fontSize:'25px'}}/><sup className='my-5' style={{color:"white",fontSize:'15px'}}>{cart.length}</sup></span>
-      </div>
-    </div>
-  </nav>
-  )
-}
+import { FaSearch } from 'react-icons/fa';
+import { BsCart3 } from 'react-icons/bs';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import { Grid } from '@mui/material';
+import { Container, Typography, Stack } from '@mui/material';
 
+
+const Navbar = () => {
+    const singuphandle = () =>{
+        navigate("/Signup")
+        localStorage.clear();
+    }
+    const navigate = useNavigate()
+    const { name, setname } = useContext(Usercontext)
+    const [formData, setFormData] = useState({ name: '' });
+    const handleChange = (event) => {
+        setFormData(event.target.value)
+    }
+    
+    localStorage.setItem('brand', JSON.stringify(formData))
+    setname(formData)
+
+    return (
+        <nav >
+            <container className="Container">
+                <Stack className="nav_bar" spacing={3} direction='row' alignItems="center">
+                    <Grid container spacing={3} alignItems="center" >
+                        <Grid item md={3} className="navbar-logo">
+                            <Typography style={{ cursor: "pointer" }} variant='h4' onClick={() => navigate('/')}>
+                                Logo
+                            </Typography>
+                        </Grid>
+                        <Grid item md={4} >
+                            <div className="navbar-search">
+                                <form action="" className="form">
+                                    <ButtonGroup className="btn-group">
+                                        <input type="text"
+                                            placeholder="Search for Product, brands and more"
+                                            className="search-input"
+                                            onChange={handleChange}
+                                            autoComplete="on"
+                                            value={formData.name}
+                                        />
+                                        <button className="search-btn"><FaSearch /></button>
+                                    </ButtonGroup>
+                                </form>
+                            </div>
+                        </Grid>
+                        <Grid item md={5} className="navbar-menu" direction="row" container align-items="center" justifyContent="space-around">
+                            <Typography style={{ cursor: "pointer" }} onClick={() => navigate('/categry')}>Category</Typography>
+                            <span>{JSON.parse(localStorage.getItem('lname'))}</span>
+                            <button onClick={singuphandle} style={{ lineHeight: "1.0",backgroundColor:"rgb(73 108 205 / 12%)",color:"white" ,width:"102px",height:"29px" }}>Log out</button>
+                            <Typography style={{ cursor: "pointer" }}>WishList</Typography>
+                            <Typography  style={{ cursor: "pointer" }} onClick={()=>navigate('/Cartitem')} ><BsCart3 /></Typography>
+
+                        </Grid>
+
+                    </Grid>
+
+                </Stack>
+                <Stack>
+
+                </Stack>
+
+            </container>
+        </nav>
+    )
+}
 export default Navbar

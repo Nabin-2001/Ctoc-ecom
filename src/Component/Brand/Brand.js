@@ -4,13 +4,16 @@ import './Brand.css'
 import Slider from "react-slick";
 import style from './Brand.module.css'
 import { Usercontext } from '../../App';
+import { Link, useNavigate } from 'react-router-dom';
 const Brand = () => {
+    const navigate = useNavigate()
     const url = "http://16.170.252.94:8000";
     const { value } = useContext(Usercontext)
+    console.log(value)
     var settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 1,
         initialSlide: 1,
         autoplay: true,
@@ -43,6 +46,9 @@ const Brand = () => {
             }
         ]
     };
+    const Senddata = (item) => {
+        localStorage.setItem('brand', JSON.stringify(item.product_title))
+    }
     return (
         <div className="my-5" id="categry_Group">
 
@@ -50,13 +56,15 @@ const Brand = () => {
                 <div className="row">
                     <Slider {...settings}>
                         {
-                            value.data && value.data.map((item, index) => {
+                            value.data && value.data.map((item) => {
                                 return (
-                                    <div>
-                                        <div className='col-md-2'>
-                                            <img src={url + item.brand.brand_logo} />
+                                    <Link to="/categry" target="_blank" key={item.id}>
+                                        <div key={item.id} onClick={() => Senddata(item)}>
+                                            <div className='col-md-2'>
+                                                <img src={url + item.brand.brand_logo} />
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 )
                             }
                             )
